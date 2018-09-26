@@ -26,8 +26,6 @@ namespace Task1_POE
             set { y = value; }
         }
 
-
-
         public int Health
         {
             get { return health; }
@@ -41,15 +39,11 @@ namespace Task1_POE
             set { speed = value; }
         }
 
-
-
         public int Attack
         {
             get { return attack; }
             set { attack = value; }
         }
-
-
 
         public int AttackRange
         {
@@ -57,15 +51,11 @@ namespace Task1_POE
             set { attackRange = value; }
         }
 
-
-
         public string Team
         {
             get { return team; }
             set { team = value; }
         }
-
-
 
         public char Symbol
         {
@@ -83,17 +73,16 @@ namespace Task1_POE
             Archer.Speed = 1;
             Archer.AttackRange = 4;
 
-            // MessageBox.Show(r.ToString());
             switch (team)
             {
                 case 1:
                     Archer.team = "Blue";
-                    //   teamColour="Blue";
+                    
                     break;
 
                 case 2:
                     Archer.team = "Yellow";
-                    // teamColour = "Green";
+                    
                     break;
 
             }// team assigning
@@ -101,7 +90,6 @@ namespace Task1_POE
             Archer.Attack = 4;
             Archer.Symbol = 'S';
 
-            // MessageBox.Show(soldier.ToString());
             return Archer;
         }
 
@@ -128,12 +116,6 @@ namespace Task1_POE
                     y = y - speed;
                 }
             }
-
-
-
-
-
-
 
         }// movement
 
@@ -169,9 +151,6 @@ namespace Task1_POE
 
             }
 
-
-
-            //MessageBox.Show(distance.ToString() + enemy.ToString());
             return distance;
 
         }
@@ -197,9 +176,6 @@ namespace Task1_POE
            
             int distance = 0;
             int distancer = 0;
-            
-          
-
            
                 foreach (MeleeUnit u in enemyM)
                 {
@@ -263,8 +239,6 @@ namespace Task1_POE
             {
                 return MEnemy;
             }
-
-
         }
 
         public override string ToString()
@@ -280,7 +254,7 @@ namespace Task1_POE
             Info = Info + "Team" + team + "\n";
             Info = Info + "Symbol: " + symbol + "\n";
             return Info;
-        }//
+        }
 
     }
 }

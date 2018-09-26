@@ -49,8 +49,6 @@ namespace Task1_POE//Thee0
                     map.x = x;
                     map.y = y;
 
-                    // int team = r.Next(1, 5);
-
                     foreach (MeleeUnit u in GameMap.MeleeList)
                     {
                         if (x == u.X && y == u.Y)
@@ -61,25 +59,25 @@ namespace Task1_POE//Thee0
                                 case "Blue":
                                     u.team = "Blue";
                                     map.BackColor = System.Drawing.Color.Blue;
-                                    //  teamColour = "Red";
+                                    
                                     break;
 
                                 case "Green":
                                     u.team = "Green";
                                     map.BackColor = System.Drawing.Color.Green;
-                                    //   teamColour = "Red";
+                                   
                                     break;
 
                                 case "Yellow":
                                     u.team = "Yellow";
                                     map.BackColor = System.Drawing.Color.Yellow;
-                                    //teamColour = "Red";
+                                   
                                     break;
 
                                 case "Red":
                                     u.team = "Red";
                                     map.BackColor = System.Drawing.Color.Red;
-                                    // teamColour = "Red";
+                                  
                                     break;
 
                             }
@@ -96,25 +94,25 @@ namespace Task1_POE//Thee0
                                 case "Blue":
                                     u.team = "Blue";
                                     map.BackColor = System.Drawing.Color.Blue;
-                                    //  teamColour = "Red";
+                                   
                                     break;
 
                                 case "Green":
                                     u.team = "Green";
                                     map.BackColor = System.Drawing.Color.Green;
-                                    //   teamColour = "Red";
+                                   
                                     break;
 
                                 case "Yellow":
                                     u.team = "Yellow";
                                     map.BackColor = System.Drawing.Color.Yellow;
-                                    //teamColour = "Red";
+                                   
                                     break;
 
                                 case "Red":
                                     u.team = "Red";
                                     map.BackColor = System.Drawing.Color.Red;
-                                    // teamColour = "Red";
+                                   
                                     break;
 
                             }
@@ -166,8 +164,6 @@ namespace Task1_POE//Thee0
                 timer = true;
             }
 
-
-
         }
 
         private void updatebuttons()
@@ -210,13 +206,13 @@ namespace Task1_POE//Thee0
                                     case "Yellow":
                                         u.team = "Yellow";
                                         buttonarray[x, y].BackColor = System.Drawing.Color.Yellow;
-                                        //teamColour = "Red";
+                                        
                                         break;
 
                                     case "Red":
                                         u.team = "Red";
                                         buttonarray[x, y].BackColor = System.Drawing.Color.Red;
-                                        // teamColour = "Red";
+                                      
                                         break;
 
                                 }
@@ -237,34 +233,31 @@ namespace Task1_POE//Thee0
                                     case "Blue":
                                         u.team = "Blue";
                                         buttonarray[x, y].BackColor = System.Drawing.Color.Blue;
-                                        //  teamColour = "Red";
+                                       
                                         break;
 
                                     case "Green":
                                         u.team = "Green";
                                         buttonarray[x, y].BackColor = System.Drawing.Color.Green;
-                                        //   teamColour = "Red";
+                                       
                                         break;
 
                                     case "Yellow":
                                         u.team = "Yellow";
                                         buttonarray[x, y].BackColor = System.Drawing.Color.Yellow;
-                                        //teamColour = "Red";
+                                        
                                         break;
 
                                     case "Red":
                                         u.team = "Red";
                                         buttonarray[x, y].BackColor = System.Drawing.Color.Red;
-                                        // teamColour = "Red";
+                                       
                                         break;
 
                                 }
                             }
-                        }
-                        
+                        }                 
                     }// update the map ranged
-
-
                 }
             }
         }
@@ -272,7 +265,6 @@ namespace Task1_POE//Thee0
         public void button_Click(object sender, EventArgs e)
         {
             
-
             if (((MyButton)sender).Text == "S" || ((MyButton)sender).Text == "A")
             {
 
@@ -290,7 +282,6 @@ namespace Task1_POE//Thee0
                         }
                     }
                     
-
                 }
 
                 foreach (RangedUnit u in GameMap.RangedList)
@@ -306,7 +297,6 @@ namespace Task1_POE//Thee0
 
                         }
                     }
-
 
                 }
 
@@ -349,9 +339,7 @@ namespace Task1_POE//Thee0
                    
                 }
             }
-     
-         
-
+           
             count = 0;
            
             foreach (RangedUnit u in GameMap.RangedList)
@@ -379,15 +367,12 @@ namespace Task1_POE//Thee0
                             CombatEngine(u);
                         }                      
                     }
-
                 }
             }
             else
             {
                 MessageBox.Show("Ranged units dead");
             }
-
-
 
             GameCount++;
             GText.Text = GameCount.ToString();
@@ -405,7 +390,7 @@ namespace Task1_POE//Thee0
                 if ((u2.ReturnPosition(GameMap.MeleeList, GameMap.RangedList)) != null)
                 {
                     int distance = u2.FindUnit(u2.ReturnPosition(GameMap.MeleeList, GameMap.RangedList));
-                   // info.Text = info.Text + "\n" + distance.ToString();
+                  
                     if (distance <= u2.attackRange)
                     {
                         u2.Combat(u2.ReturnPosition(GameMap.MeleeList, GameMap.RangedList));
@@ -459,7 +444,6 @@ namespace Task1_POE//Thee0
                                     u.MoveUnit(0, -1);
                                 }
                             }
-
 
                         }// movement
                         else
@@ -541,7 +525,6 @@ namespace Task1_POE//Thee0
                     }
                     if (counti > 0) // see number of units in array
                     {
-
                        
                         int distance = u2.FindUnit(u2.ReturnPosition(GameMap.MeleeList, GameMap.RangedList));
 
@@ -597,7 +580,6 @@ namespace Task1_POE//Thee0
                                     }
                                 }
 
-
                             }// movement
                             else
                             {
@@ -614,7 +596,6 @@ namespace Task1_POE//Thee0
 
                                         u.MoveUnit(-1, 0);
                                     }
-
 
                                     if (Position.Y < u2.Y)
                                     {
@@ -639,7 +620,6 @@ namespace Task1_POE//Thee0
                                         u.MoveUnit(-1, 0);
                                     }
 
-
                                     if (Position.Y < u2.Y)
                                     {
                                         u.MoveUnit(0, 1);
@@ -648,12 +628,7 @@ namespace Task1_POE//Thee0
                                     {
                                         u.MoveUnit(0, -1);
                                     }
-                                }
-
-                                
-
-                                
-
+                                }                                                               
                             }// running away / needs work
                         }
 

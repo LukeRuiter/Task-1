@@ -20,7 +20,6 @@ namespace Task1_POE
         public void NewBattlefield()
         {
 
-
             Map GameMap = new Map();
             Random r = new Random();
             int melee = 5;
@@ -28,7 +27,6 @@ namespace Task1_POE
             int countM = 0;
             int count = 0;
             
-
             for (int i = 0; i < melee; i++)// melee units 
             {
 
@@ -100,7 +98,6 @@ namespace Task1_POE
                     unitMap[x, y] = "";
                 }
             }
-
           
             // mover units to new location in 2d array
         }

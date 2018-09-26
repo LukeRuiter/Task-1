@@ -85,33 +85,30 @@ namespace Task1_POE
             soldier.Health = 10;
             soldier.Speed = 1;
             soldier.AttackRange = 2;
-
-            // MessageBox.Show(r.ToString());
+           
             switch (team)
             {
                 case 1:
                     soldier.team = "Blue";
-                    //   teamColour="Blue";
+                    
                     break;
 
                 case 2:
                     soldier.team = "Yellow";
-                    // teamColour = "Green";
+                    
                     break;
 
             }// team assigning
 
             soldier.Attack = 4;
             soldier.Symbol = 'S';
-
-            // MessageBox.Show(soldier.ToString());
+            
             return soldier;
         }
 
         public override void MoveUnit(int mx, int my)
         {
-            
-            
+                        
                 if (mx > 0)
                 {
                     x = x + speed;
@@ -129,13 +126,6 @@ namespace Task1_POE
                 {
                     y = y - speed;
                 }
-           
-
-                
-            
-
-            
-
 
         }// movement
 
@@ -170,10 +160,6 @@ namespace Task1_POE
                      distance = (Math.Abs(x - cEnemy.X) + Math.Abs(y - cEnemy.Y));
 
             }
-
-
-
-            //MessageBox.Show(distance.ToString() + enemy.ToString());
             return distance;
 
         }
@@ -195,13 +181,10 @@ namespace Task1_POE
             
             MeleeUnit MEnemy = null ;
             RangedUnit rEnemy = null;
-            int count = 0;
-           // int countm = 0;
+            int count = 0;          
             int distance =0;
             int distancer = 0;
-           // bool ranged = false;
-           
-            
+                                
                 foreach (MeleeUnit u in enemyM)
                 {
                     if (u.alive&& u.team != team)
@@ -227,8 +210,6 @@ namespace Task1_POE
                             }
                         }
                     }
-
-
                 }
 
             count = 0;
@@ -238,26 +219,24 @@ namespace Task1_POE
                     {
                         if (u.X != x && u.Y != y)
                         {
-                        if (count == 0)
-                        {
-                            count++;
-                            distancer = (((Math.Abs(x) - Math.Abs(u.X)) + (Math.Abs(y) - Math.Abs(u.Y))));
-
-                            rEnemy = u;
-                        }
-                        else
-                        {
-                            if (distancer > (((Math.Abs(x) - Math.Abs(u.X)) + (Math.Abs(y) - Math.Abs(u.Y)))))
+                            if (count == 0)
                             {
+                                count++;
                                 distancer = (((Math.Abs(x) - Math.Abs(u.X)) + (Math.Abs(y) - Math.Abs(u.Y))));
+
                                 rEnemy = u;
-                               // ranged = true;
                             }
-
-
+                            else
+                            {
+                                if (distancer > (((Math.Abs(x) - Math.Abs(u.X)) + (Math.Abs(y) - Math.Abs(u.Y)))))
+                                {
+                                    distancer = (((Math.Abs(x) - Math.Abs(u.X)) + (Math.Abs(y) - Math.Abs(u.Y))));
+                                    rEnemy = u;
+                              
+                                }
+                            }
+                    }
                         }
-                    }
-                    }
                   
 
                 }
@@ -285,8 +264,7 @@ namespace Task1_POE
             Info = Info + "Team" + team + "\n";
             Info = Info + "Symbol: " + symbol + "\n";
             return Info;
-        }// done
-
+        }
       
     }
 }
